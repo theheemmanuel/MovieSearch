@@ -1,8 +1,19 @@
-# React + Vite
+# MovieSearch
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MovieSearch is a React-based web application that allows users to search for movies, view details, and manage a personal watched list.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Search for movies using the OMDB API
+- View detailed information about each movie
+- Add movies to a personal watched list
+- Rate watched movies
+- Remove movies from the watched list
+- Display average ratings and runtime for watched movies
+
+## Technologies Used
+
+- React
+- Axios for API requests
+- Tailwind CSS for styling
+- useReducer for state management

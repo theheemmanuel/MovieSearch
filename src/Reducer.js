@@ -13,6 +13,13 @@ export default function Reducer(state, action) {
       return { ...state, clickedMovies: action.payload };
     case "movieList":
       return { ...state, movies: action.payload };
+    case "updateMovie":
+      return { ...state, watched: [action.payload, ...state.watched] };
+    case "remove":
+      return {
+        ...state,
+        watched: state.watched.filter((item) => item.imdbID !== action.payload),
+      };
   }
   return state;
 }
