@@ -12,7 +12,7 @@ export default function App() {
     search: "",
     clickedMovies: null,
     movies: [],
-    watched: JSON.parse(localStorage.getItem("watched")),
+    watched: JSON.parse(localStorage.getItem("watched")) || [],
   };
   const [state, dispatch] = useReducer(Reducer, InitialItems);
 
