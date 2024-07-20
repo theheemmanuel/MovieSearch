@@ -11,11 +11,12 @@ export default function MovieDetails({
 }) {
   const initialStatus = { movieView: null, loading: true };
   const [state, dispatch] = useReducer(Reducer, initialStatus);
-  // const [movieView, setMovieView] = useState();
+
+  const key = "fc1f9ee8";
   useEffect(() => {
     dispatch({ type: "toggle", payload: true });
     axios
-      .get(`http://www.omdbapi.com/?apikey=fc1f9ee8&i=${selectedID}`)
+      .get(`http://www.omdbapi.com/?apikey=${key}&i=${selectedID}`)
       .then((res) => {
         console.log(res.data);
         dispatch({ type: "movieView", payload: res.data });
