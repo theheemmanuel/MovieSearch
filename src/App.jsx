@@ -40,7 +40,7 @@ export default function App() {
           movies={state.movies}
         />
       </div>
-      <div>
+      {/* <div>
         <Main>
           <div className="flex-1 bg-gray-800 min-h-[100vh] m-6 rounded-3xl h-[fit-content]">
             <ListResult
@@ -67,8 +67,7 @@ export default function App() {
             />
           </div>
         </Main>
-        <h1 className="text-white text-3xl">Help</h1>
-      </div>
+      </div> */}
     </div>
   );
 }
