@@ -2,6 +2,8 @@
 import { useEffect, useReducer, useState } from "react";
 import axios from "axios";
 import Reducer from "../Reducer";
+import Dstar from "../assets/Star 3.png";
+import Sstar from "../assets/Star 5.png";
 
 export default function MovieDetails({
   handleClose,
@@ -70,10 +72,10 @@ export default function MovieDetails({
                     className="p-2 cursor-pointer"
                     onMouseEnter={() => setfull(each)}
                     onMouseLeave={() => setfull(showfull)}
-                    onClick={() => setshowfull(full)}
+                    onClick={() => setshowfull(each)}
                     key={each}
                   >
-                    {full >= each ? "✪" : "⭑"}
+                    {full >= each ? <img src={Dstar} /> : <img src={Sstar} />}
                   </div>
                 ))}
               </div>
@@ -81,7 +83,7 @@ export default function MovieDetails({
               {full >= 3 && (
                 <button
                   onClick={() =>
-                    setwatched({ ...state.movieView, userRating: full })
+                    setwatched({ ...state.movieView, userRating: showfull })
                   }
                   className="flex justify-center w-[fit-content] mx-auto p-2 mt-3 rounded-xl bg-[#663399]"
                 >
