@@ -1,18 +1,17 @@
 /* eslint-disable react/prop-types */
-import { useReducer } from "react";
-import Reducer from "../Reducer";
+import useMovies from "../useMovies";
 
 export const ListResult = ({ movies, clickMovies }) => {
-  const [state, dispatch] = useReducer(Reducer, true);
+  const { state, dispatch } = useMovies();
   return (
     <div className="pb-6">
       <button
         className="bg-[#243c5a] rounded-full px-2 m-4 text-[24px]"
         onClick={() => dispatch({ type: "hide" })}
       >
-        {state ? "–" : "+"}
+        {state.status ? "–" : "+"}
       </button>
-      {state && (
+      {state.status && (
         <ul className="list">
           {movies ? (
             movies.map((movie) => (

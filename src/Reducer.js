@@ -4,7 +4,7 @@ export default function Reducer(state, action) {
     case "search":
       return { ...state, search: action.payload };
     case "hide":
-      return !state;
+      return { ...state, status: !state.status };
     case "toggle":
       return { ...state, loading: action.payload };
     case "movieView":

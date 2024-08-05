@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
-import { useReducer } from "react";
-import Reducer from "../Reducer";
 import MovieDetails from "./MovieDetails";
+import useMovies from "../useMovies";
 
 export const WatchedResult = ({
   watched,
@@ -16,7 +15,7 @@ export const WatchedResult = ({
   const avgImdbRating = average(watched.map((movie) => movie.imdbRating));
   const avgUserRating = average(watched.map((movie) => movie.userRating));
   const avgRuntime = average(watched.map((movie) => parseInt(movie.Runtime)));
-  const [state, dispatch] = useReducer(Reducer, true);
+  const { dispatch, state } = useMovies();
 
   return (
     <>
@@ -33,9 +32,9 @@ export const WatchedResult = ({
             className="bg-[#243c5a] rounded-full px-2 m-4 text-[24px]"
             onClick={() => dispatch({ type: "hide" })}
           >
-            {state ? "–" : "+"}
+            {state.status ? "–" : "+"}
           </button>
-          {state && (
+          {state.status && (
             <>
               <div className="flex flex-col bg-gray-600 rounded-lg px-6 py-4">
                 <h2 className="font-bold">Movies you watched</h2>
